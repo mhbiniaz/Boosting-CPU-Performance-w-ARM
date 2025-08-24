@@ -142,15 +142,15 @@ All of the settings of the qemu run command can be found in this repo's [Makefil
 ## 📖 References & Resources
 - 📄 SVE whitepaper: [Arm Scalable Vector Extension and application to Machine Learning](https://github.com/mhbiniaz/Boosting-CPU-Performance-w-ARM/blob/main/arm-scalable-vector-extensions-and-application-to-machine-learning%20(1).pdf)[1]
 - 📚 Learn ARM SME & SVE:
-    - (Multiplying matrices with SME2)[https://learn.arm.com/learning-paths/cross-platform/multiplying-matrices-with-sme2/6-sme2-matmul-asm/] note that SME2 is as of today not supported by QEMU/GEM5 emulation
-    - Outer product tutorial [link1](https://learn.arm.com/learning-paths/cross-platform/multiplying-matrices-with-sme2/5-outer-product/) [link2](https://community.arm.com/arm-community-blogs/b/architectures-and-processors-blog/posts/arm-scalable-matrix-extension-introduction-p2)
-- [Understanding SME registers, instructions, predicates](https://community.arm.com/arm-community-blogs/b/architectures-and-processors-blog/posts/arm-scalable-matrix-extension-introduction-p2)
+    - 🪆 [Multiplying matrices with SME2](https://learn.arm.com/learning-paths/cross-platform/multiplying-matrices-with-sme2/6-sme2-matmul-asm/)[2] note that SME2 is as of today not supported by QEMU/GEM5 emulation
+    - 👑 Outer product tutorial [link1](https://learn.arm.com/learning-paths/cross-platform/multiplying-matrices-with-sme2/5-outer-product/) [link2](https://community.arm.com/arm-community-blogs/b/architectures-and-processors-blog/posts/arm-scalable-matrix-extension-introduction-p2)
+- 🪏 [Understanding SME registers, instructions, predicates](https://community.arm.com/arm-community-blogs/b/architectures-and-processors-blog/posts/arm-scalable-matrix-extension-introduction-p2)
       
 💻 Example repo: [mhbiniaz/llama2.c-arm-sve-sme](https://github.com/mhbiniaz/llama2.c-arm-sve-sme/tree/master)
 
 ## 🧮 Important note on algorithms: 
 - We must mention here, each of the compute / hardware paradigms here are most optimally mapped to one of the algorithms - in this case for matmul in the linked repository. 
-- Take for example the Matmul algorithm in Fig.2 of [1](https://github.com/mhbiniaz/Boosting-CPU-Performance-w-ARM/blob/main/arm-scalable-vector-extensions-and-application-to-machine-learning%20(1).pdf) compared to Fig.3 for vectorized Matrix Multiplication. Same applies for [2]()
+- Take for example the Matmul algorithm in Fig.2 of [[1](https://github.com/mhbiniaz/Boosting-CPU-Performance-w-ARM/blob/main/arm-scalable-vector-extensions-and-application-to-machine-learning%20(1).pdf)] compared to Fig.3 for vectorized Matrix Multiplication. Same applies for the algorithm in [[2](https://learn.arm.com/learning-paths/cross-platform/multiplying-matrices-with-sme2/5-outer-product/)]
 
 
 
