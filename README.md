@@ -148,6 +148,7 @@ All of the settings of the qemu run command can be found in this repo's [Makefil
       
 💻 Example repo: [mhbiniaz/llama2.c-arm-sve-sme](https://github.com/mhbiniaz/llama2.c-arm-sve-sme/tree/master)
 
+[1] and [2] are by far the most important reads for understanding concept such as macc(multiple-accumulate):load ratio, mapping algorithms to (sve-, sme-) hardware registers, loop unrolling factors, register pressure, etc.
 ## 🧮 Important note on algorithms: 
 - We must mention here, each of the compute / hardware paradigms here are most optimally mapped to one of the algorithms - in this case for matmul in the linked repository. 
 - Take for example the Matmul algorithm in Fig.2 of [[1](https://github.com/mhbiniaz/Boosting-CPU-Performance-w-ARM/blob/main/arm-scalable-vector-extensions-and-application-to-machine-learning%20(1).pdf)] compared to Fig.3 for vectorized Matrix Multiplication. Same applies for the algorithm in [[2](https://learn.arm.com/learning-paths/cross-platform/multiplying-matrices-with-sme2/5-outer-product/)]
