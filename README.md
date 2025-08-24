@@ -19,6 +19,7 @@ Whether you're new to SIMD or just starting with ARM’s Scalable Vector Extensi
 6. 🛠 [Getting Started: Your First SVE/SME Code](#start)
 9. 🖥️ [Running on Simulators / Emulators / QEMU](#qemu)
 8. 📖 [References & Resources](#ref)
+9. 👩‍💻 [Appendix](#appen)
 
 <a name="why"></a>
 ## 💡 Why Vectorization?
@@ -120,3 +121,27 @@ Not everyone has access to a physical ARMv9 CPU with SVE and SME support — but
 ✅ Great for unit tests in CI/CD without ARM hardware
 
 Be careful that QEMU is not cycle accurate, you can try gem5 instead. But QEMU gives instruction count accurately. You can download a container for qemu + all the instruction couting plugins here [x86](https://hub.docker.com/repository/docker/hbiniaz/sme_x86_qemu/general) [aarch64](https://hub.docker.com/repository/docker/hbiniaz/native_arm/general)
+
+#### 🚀 Option 1: QEMU (Quick Emulator)
+QEMU can emulate ARMv8.2‑A and ARMv9‑A cores with SVE, and from version 8.x onwards, parts of SME.
+
+Installing QEMU (refer to this dockerfile)[https://github.com/mhbiniaz/llama2.c-arm-sve-sme/blob/master/dockerfiles/dockerfile_arm64]
+
+```bash
+docker pull hbiniaz/native_arm #x86: hbiniaz/sme_x86_qemu
+# equivalently: docker build -t hbiniaz/native_arm .
+
+docker images #check image 
+
+docker run -it --name my_arm_container hbiniaz/native_arm /bin/bash #run
+```
+
+All of the settings of the qemu run command can be found in this repo's [Makefile](https://github.com/mhbiniaz/llama2.c-arm-sve-sme/blob/master/Makefile) i.e. `qemu-aarch64 -cpu max,sve512=on,sme512=on -plugin /opt/qemu/build/tests/tcg/plugins/libinsn.so -d plugin ./run.native.sme $(ARGS)` you can run the binary run.native.sme you have compiled using gcc before, passing the arguemnts that it needs, and using the insn plugin for the count of instructions and simulate a sme/sve capable gpu with vector length of 512. 
+
+<a name="ref"></a>
+## 📖 References & Resources
+- 📄 Arm Scalable Vector Extension and application to Machine Learning
+- 📚 Learn ARM SME & SVE:
+    - Multiplying matrices with SME2
+    - Outer product tutorial
+💻 Example repo: mhbiniaz/llama2.c-arm-sve-sme
