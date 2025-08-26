@@ -81,9 +81,9 @@ void add_arrays_sve(float *C, float *A, float *B, long n) {
 ## 🧮 ARM SME — Matrix Acceleration in Hardware
 SME builds on SVE2 to supercharge matrix multiplication:
 
-📌 ZA tiles — massive on‑chip matrix registers
-📌 Streaming SVE mode (SSVE) — throughput-optimized
-📌 Outer Product Instruction (FMOPA) — multiply rows & columns directly
+- 📌 ZA tiles — massive on‑chip matrix registers
+- 📌 Streaming SVE mode (SSVE) — throughput-optimized
+- 📌 Outer Product Instruction (FMOPA) — multiply rows & columns directly
 
 Conceptual assembly:
 
